@@ -1,4 +1,0 @@
-../Core/Src/sensor.c:12:9:NMEA_Comma_Pos	24	static
-../Core/Src/sensor.c:25:10:NMEA_Pow	24	static
-../Core/Src/sensor.c:35:5:NMEA_Str2num	40	static
-../Core/Src/sensor.c:87:6:NMEA_GNRMC_Analysis	56	static

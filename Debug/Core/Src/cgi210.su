@@ -1,0 +1,4 @@
+../Core/Src/cgi210.c:12:9:NMEA_Comma_Pos	24	static
+../Core/Src/cgi210.c:30:10:NMEA_Pow	24	static
+../Core/Src/cgi210.c:41:5:NMEA_Str2num	40	static
+../Core/Src/cgi210.c:99:6:NMEA_GPCHC_Analysis	24	static

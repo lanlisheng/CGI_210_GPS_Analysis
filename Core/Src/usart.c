@@ -21,6 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
+#include "cgi210.h"
 #include "sensors.h"
 #include <stdio.h>
 #include <string.h>
@@ -240,7 +241,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (UART1_Rx_Flag == 1) {
       /* GPS DATA Analysis algorithm */
 
-      NMEA_GNRMC_Analysis(&gpsx, (uint8_t *)UART1_RxBuff);
+      NMEA_GPCHC_Analysis(UART1_RxBuff);
     }
 
     /* Clear out receive buff while overflowed */
