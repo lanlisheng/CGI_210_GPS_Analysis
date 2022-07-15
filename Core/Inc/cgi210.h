@@ -49,6 +49,7 @@ typedef struct {
 } CGI_Data_Record_Frame_Type;
 
 void NMEA_GPCHC_Analysis(uint8_t *GPS_Data);
+void NMEA_GPGGA_Analysis(uint8_t *GPS_Data);
 int NMEA_Str2num(uint8_t *buf, uint8_t *dx);
 uint32_t NMEA_Pow(uint8_t m, uint8_t n);
 uint8_t NMEA_Comma_Pos(uint8_t *buf, uint8_t cx);

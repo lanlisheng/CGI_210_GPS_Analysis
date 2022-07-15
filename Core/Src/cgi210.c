@@ -167,21 +167,23 @@ void NMEA_GPCHC_Analysis(uint8_t *GPS_Data) {
            (CGI_Data_Record_Freme.Acc_Data.acc_Z) / 10000);
   }
 
-  posx = NMEA_Comma_Pos(p1, 12); //得到纬度
-  if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Lat_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Lat_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Lat_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Lat_Data.Hemisphere = NMEA_Str2num(p1 + posx, &dx);
-  }
+  //   posx = NMEA_Comma_Pos(p1, 12); //得到纬度
+  //   if (posx != 0xFF) {
+  //     CGI_Data_Record_Freme.Lat_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Lat_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Lat_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Lat_Data.Hemisphere = NMEA_Str2num(p1 + posx,
+  //     &dx);
+  //   }
 
-  posx = NMEA_Comma_Pos(p1, 13); //得到经度
-  if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Long_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Long_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Long_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Long_Data.Hemisphere = NMEA_Str2num(p1 + posx, &dx);
-  }
+  //   posx = NMEA_Comma_Pos(p1, 13); //得到经度
+  //   if (posx != 0xFF) {
+  //     CGI_Data_Record_Freme.Long_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Long_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Long_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
+  //     CGI_Data_Record_Freme.Long_Data.Hemisphere = NMEA_Str2num(p1 + posx,
+  //     &dx);
+  //   }
 
   posx = NMEA_Comma_Pos(p1, 14); //得到高度
   if (posx != 0xFF) {
@@ -218,5 +220,55 @@ void NMEA_GPCHC_Analysis(uint8_t *GPS_Data) {
   posx = NMEA_Comma_Pos(p1, 20); //得到副天线2的卫星数
   if (posx != 0xFF) {
     CGI_Data_Record_Freme.NSV2_Number = NMEA_Str2num(p1 + posx, &dx);
+  }
+}
+
+/* 华测CGI210 通用数据解析 GPGGA */
+void NMEA_GPGGA_Analysis(uint8_t *GPS_Data) {
+  uint8_t *p1, dx;
+  uint8_t posx;
+  uint32_t temp;
+  float rs;
+  p1 = (uint8_t *)strstr((const char *)GPS_Data, "$GPGGA");
+  posx = NMEA_Comma_Pos(p1, 2); //得到纬度
+  if (posx != 0xFF) {
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    CGI_Data_Record_Freme.Lat_Data.Degrees =
+        temp / NMEA_Pow(10, dx + 2); //得到°
+    CGI_Data_Record_Freme.Lat_Data.Minutes =
+        ((temp % NMEA_Pow(10, dx + 2)) / NMEA_Pow(10, dx)); //得到'
+    CGI_Data_Record_Freme.Lat_Data.Seconds =
+        ((temp % NMEA_Pow(10, dx)) * (1.0) / NMEA_Pow(10, dx)) * 60.0;
+
+    printf("\r\n");
+    printf("CGI_Data_Record_Freme.Lat_Data.Degrees is %d\r\n",
+           CGI_Data_Record_Freme.Lat_Data.Degrees);
+    printf("CGI_Data_Record_Freme.Lat_Data.Minutes is %d\r\n",
+           CGI_Data_Record_Freme.Lat_Data.Minutes);
+    printf("CGI_Data_Record_Freme.Lat_Data.Seconds is %.2f\r\n",
+           CGI_Data_Record_Freme.Lat_Data.Seconds);
+  }
+
+  posx = NMEA_Comma_Pos(p1, 3); //得到南纬还是北纬
+  if (posx != 0xFF) {
+    CGI_Data_Record_Freme.Lat_Data.Hemisphere = *(p1 + posx);
+    printf("CGI_Data_Record_Freme.Lat_Data.Hemisphere is %c\r\n",
+           CGI_Data_Record_Freme.Lat_Data.Hemisphere);
+  }
+
+  posx = NMEA_Comma_Pos(p1, 4); //得到经度
+  if (posx != 0xFF) {
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    CGI_Data_Record_Freme.Long_Data.Degrees =
+        temp / NMEA_Pow(10, dx + 2); //得到°
+    CGI_Data_Record_Freme.Long_Data.Minutes =
+        ((temp % NMEA_Pow(10, dx + 2)) / NMEA_Pow(10, dx)); //得到’
+    CGI_Data_Record_Freme.Long_Data.Seconds =
+        ((temp % NMEA_Pow(10, dx)) * (1.0) / NMEA_Pow(10, dx)) * 60.0;
+  }
+
+  posx = NMEA_Comma_Pos(p1, 5); //得到东经还是西经
+  if (posx != 0xFF) {
+    CGI_Data_Record_Freme.Long_Data.Hemisphere = *(p1 + posx);
   }
 }

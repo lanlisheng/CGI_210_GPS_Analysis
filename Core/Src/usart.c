@@ -241,6 +241,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
     if (UART1_Rx_Flag == 1) {
       /* GPS DATA Analysis algorithm */
 
+      NMEA_GPGGA_Analysis(UART1_RxBuff);
       NMEA_GPCHC_Analysis(UART1_RxBuff);
     }
 
