@@ -6,6 +6,35 @@
 
 CGI_Data_Record_Frame_Type CGI_Data_Record_Freme;
 
+/* GPS Datas */
+Longtitude_And_Latitude_Data_Type Longtitude_Data;
+Longtitude_And_Latitude_Data_Type Latitude_Data;
+
+/* Data records */
+// uint8_t Data_Record_Frame_CNT = 0;
+// CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10] = {{
+//     0,
+//     0,
+//     0,
+//     {0},
+//     {0},
+//     {
+//         0,
+//         0,
+//         0.0,
+//         0x2D,
+//     },
+//     {
+//         0,
+//         0,
+//         0.0,
+//         0x2D,
+//     },
+//     0,
+//     {0},
+//     0,
+//     0,
+// }};
 //从buf里面得到第cx个逗号所在的位置
 //返回值:0~0XFE,代表逗号所在位置的偏移.
 //       0XFF,代表不存在第cx个逗号
@@ -271,4 +300,37 @@ void NMEA_GPGGA_Analysis(uint8_t *GPS_Data) {
   if (posx != 0xFF) {
     CGI_Data_Record_Freme.Long_Data.Hemisphere = *(p1 + posx);
   }
+}
+
+/* Add new frame record */
+void Data_Record_Add_New_Frame(void) {
+  CGI_Data_Record_Frame_Type Data_Frame;
+
+  Data_Frame.Heading_Angle = CGI_Data_Record_Freme.Heading_Angle;
+  Data_Frame.Pitch_Angle = CGI_Data_Record_Freme.Pitch_Angle;
+  Data_Frame.Roll_Angle = CGI_Data_Record_Freme.Roll_Angle;
+
+  Data_Frame.Gyro_Data = CGI_Data_Record_Freme.Gyro_Data;
+  Data_Frame.Acc_Data = CGI_Data_Record_Freme.Acc_Data;
+
+  Data_Frame.Altitude_Data = CGI_Data_Record_Freme.Altitude_Data;
+
+  Data_Frame.Speed_Data = CGI_Data_Record_Freme.Speed_Data;
+
+  Data_Frame.NSV1_Number = CGI_Data_Record_Freme.NSV1_Number;
+  Data_Frame.NSV2_Number = CGI_Data_Record_Freme.NSV2_Number;
+
+  Data_Frame.Lat_Data = Latitude_Data;
+  Data_Frame.Long_Data = Longtitude_Data;
+
+  /* A simple FIFO algorithm */
+  // if (Data_Record_Frame_CNT <= 9) {
+  //   CGI_Data_Record_Freme[Data_Record_Frame_CNT] = Data_Frame;
+  //   Data_Record_Frame_CNT++;
+  // } else {
+  //   for (uint8_t i = 0; i < 9; i++) {
+  //     CGI_Data_Record_Freme[i] = CGI_Data_Record_Freme[i + 1];
+  //   }
+  //   CGI_Data_Record_Freme[9] = Data_Frame;
+  // }
 }

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.18.1">
+  <Texts>
+    <Text Id="__SingleUse_YAZM" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">柯柏文（深圳）科技有限公司 组合惯性导航实训平台</Translation>
+    </Text>
+    <Text Id="__SingleUse_S63X" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">数</Translation>
+    </Text>
+    <Text Id="__SingleUse_1BMD" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">据</Translation>
+    </Text>
+    <Text Id="__SingleUse_B6BK" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">记</Translation>
+    </Text>
+    <Text Id="__SingleUse_5RN6" TypographyId="Large" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">录</Translation>
+    </Text>
+    <Text Id="__SingleUse_YWV4" TypographyId="Default" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">序号</Translation>
+    </Text>
+    <Text Id="__SingleUse_85QE" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">纬度</Translation>
+    </Text>
+    <Text Id="__SingleUse_7BED" TypographyId="Default" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">纬度</Translation>
+    </Text>
+    <Text Id="__SingleUse_YRID" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">角度</Translation>
+    </Text>
+    <Text Id="__SingleUse_9LQL" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">地磁场</Translation>
+    </Text>
+    <Text Id="__SingleUse_50S6" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">速度</Translation>
+    </Text>
+    <Text Id="__SingleUse_82DP" TypographyId="Small" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">加速度</Translation>
+    </Text>
+    <Text Id="__SingleUse_KTEZ" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">x</Translation>
+    </Text>
+    <Text Id="__SingleUse_FLDH" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">y</Translation>
+    </Text>
+    <Text Id="__SingleUse_5ZLW" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">z</Translation>
+    </Text>
+    <Text Id="__SingleUse_DOW2" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">R</Translation>
+    </Text>
+    <Text Id="__SingleUse_285S" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">P</Translation>
+    </Text>
+    <Text Id="__SingleUse_UU25" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">H</Translation>
+    </Text>
+    <Text Id="__SingleUse_GHQG" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">x</Translation>
+    </Text>
+    <Text Id="__SingleUse_2BZW" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">y</Translation>
+    </Text>
+    <Text Id="__SingleUse_VK2E" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">z</Translation>
+    </Text>
+    <Text Id="__SingleUse_MT7X" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Ve</Translation>
+    </Text>
+    <Text Id="__SingleUse_IIQF" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Vn</Translation>
+    </Text>
+    <Text Id="__SingleUse_P52U" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">Vu</Translation>
+    </Text>
+    <Text Id="__SingleUse_FKWR" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">V</Translation>
+    </Text>
+    <Text Id="__SingleUse_P7JZ" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_1JS7" TypographyId="Default" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">00</Translation>
+    </Text>
+    <Text Id="__SingleUse_47P3" TypographyId="Numbers" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;''&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_AYB3" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_VSPJ" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_AHJM" TypographyId="Numbers" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;°&lt;value&gt;'</Translation>
+    </Text>
+    <Text Id="__SingleUse_DWQK" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+    </Text>
+    <Text Id="__SingleUse_P6AR" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+    </Text>
+    <Text Id="__SingleUse_OHHY" TypographyId="Numbers" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;''&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_BDMD" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_AA3L" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">-</Translation>
+    </Text>
+    <Text Id="__SingleUse_3XF0" TypographyId="Numbers" Alignment="Right" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;°&lt;value&gt;'</Translation>
+    </Text>
+    <Text Id="__SingleUse_499X" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+    </Text>
+    <Text Id="__SingleUse_4NQI" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0</Translation>
+    </Text>
+    <Text Id="__SingleUse_X6VF" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_2IS8" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_67O2" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_RN1R" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_FMJA" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_O8TQ" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_RZQQ" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_6MWB" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_18AE" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_RHK2" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_R4O5" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_IMIR" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_HRSS" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_EQ4Z" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_NEXC" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_1CCU" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_KNBT" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_MXA8" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_BQST" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_TXIF" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_R8IP" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_4E7K" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_DL1N" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_THAP" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+    <Text Id="__SingleUse_23V5" TypographyId="Numbers" Alignment="Center" Direction="LTR">
+      <Translation Language="GB">&lt;value&gt;</Translation>
+    </Text>
+    <Text Id="__SingleUse_KZFU" TypographyId="Numbers" Alignment="Left" Direction="LTR">
+      <Translation Language="GB">0.00</Translation>
+    </Text>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="SourceHanSerifSC-Heavy.otf" Size="20" Bpp="4" FallbackCharacter="?" WildcardCharacters="-." WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Large" Font="SourceHanSerifSC-Heavy.otf" Size="30" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Small" Font="SourceHanSerifSC-Heavy.otf" Size="15" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    <Typography Id="Numbers" Font="SourceHanSansSC-Bold.otf" Size="15" Bpp="4" FallbackCharacter="?" WildcardCharacterRanges="0-9,a-z,A-Z" />
+  </Typographies>
+</TextDatabase>

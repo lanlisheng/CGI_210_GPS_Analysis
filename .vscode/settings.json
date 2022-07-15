@@ -4,6 +4,7 @@
         "usart.h": "c",
         "string.h": "c",
         "stdio.h": "c",
-        "sensors.h": "c"
+        "sensors.h": "c",
+        "app_touchgfx.h": "c"
     }
 }
