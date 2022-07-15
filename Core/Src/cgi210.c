@@ -4,37 +4,37 @@
 #include "usart.h"
 #include <stdio.h>
 
-CGI_Data_Record_Frame_Type CGI_Data_Record_Freme;
-
 /* GPS Datas */
+float AccRaw[3];
+float GyoRaw[3];
+float AngleRaw[3];
 Longtitude_And_Latitude_Data_Type Longtitude_Data;
 Longtitude_And_Latitude_Data_Type Latitude_Data;
+double Altitude;
+float SpeedValue[4];
+uint8_t NSV[2];
 
 /* Data records */
-// uint8_t Data_Record_Frame_CNT = 0;
-// CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10] = {{
-//     0,
-//     0,
-//     0,
-//     {0},
-//     {0},
-//     {
-//         0,
-//         0,
-//         0.0,
-//         0x2D,
-//     },
-//     {
-//         0,
-//         0,
-//         0.0,
-//         0x2D,
-//     },
-//     0,
-//     {0},
-//     0,
-//     0,
-// }};
+uint8_t Data_Record_Frame_CNT = 0;
+CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10] = {{
+    {0},
+    {0},
+    {0},
+    {
+        0,
+        0,
+        0.0,
+        0x2D,
+    },
+    {
+        0,
+        0,
+        0.0,
+        0x2D,
+    },
+    {0},
+    {0},
+}};
 //从buf里面得到第cx个逗号所在的位置
 //返回值:0~0XFE,代表逗号所在位置的偏移.
 //       0XFF,代表不存在第cx个逗号
@@ -128,127 +128,104 @@ int NMEA_Str2num(uint8_t *buf, uint8_t *dx) {
 void NMEA_GPCHC_Analysis(uint8_t *GPS_Data) {
   uint8_t *p1, dx;
   uint8_t posx;
-  int32_t temp;
-  float rs;
+  int32_t temp = 0;
 
   p1 = (uint8_t *)strstr((const char *)GPS_Data, "$GPCHC");
 
   posx = NMEA_Comma_Pos(p1, 3); //得到偏航角
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Heading_Angle = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Heading_Angle is %.2f\r\n",
-           (CGI_Data_Record_Freme.Heading_Angle) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AngleRaw[0] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 4); //得到俯仰角
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Pitch_Angle = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Pitch_Angle is %.2f\r\n",
-           (CGI_Data_Record_Freme.Pitch_Angle) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AngleRaw[1] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 5); //得到横滚角
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Roll_Angle = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Roll_Angle is %.2f\r\n",
-           (CGI_Data_Record_Freme.Roll_Angle) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AngleRaw[2] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 6); //得到陀螺X轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Gyro_Data.Gyro_X = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Gyro_Data.Gyro_X is %.2f\r\n",
-           (CGI_Data_Record_Freme.Gyro_Data.Gyro_X) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    GyoRaw[0] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 7); //得到陀螺Y轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Gyro_Data.Gyro_Y = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Gyro_Data.Gyro_Y  is %.2f\r\n",
-           (CGI_Data_Record_Freme.Gyro_Data.Gyro_Y) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    GyoRaw[1] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 8); //得到陀螺Z轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Gyro_Data.Gyro_Z = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Gyro_Data.Gyro_Z is %.2f\r\n",
-           (CGI_Data_Record_Freme.Gyro_Data.Gyro_Z) / 100);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    GyoRaw[2] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 9); //得到加表X轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Acc_Data.acc_X = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Acc_Data.acc_X  is %.2f\r\n",
-           (CGI_Data_Record_Freme.Acc_Data.acc_X) / 10000);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AccRaw[0] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 10); //得到加表Y轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Acc_Data.acc_Y = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Acc_Data.acc_Y  is %.2f\r\n",
-           (CGI_Data_Record_Freme.Acc_Data.acc_Y) / 10000);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AccRaw[1] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 11); //得到加表Z轴
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Acc_Data.acc_Z = NMEA_Str2num(p1 + posx, &dx);
-    printf("CGI_Data_Record_Freme.Acc_Data.acc_Z  is %.2f\r\n",
-           (CGI_Data_Record_Freme.Acc_Data.acc_Z) / 10000);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    AccRaw[2] = temp * 1.0 / NMEA_Pow(10, 2);
   }
-
-  //   posx = NMEA_Comma_Pos(p1, 12); //得到纬度
-  //   if (posx != 0xFF) {
-  //     CGI_Data_Record_Freme.Lat_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Lat_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Lat_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Lat_Data.Hemisphere = NMEA_Str2num(p1 + posx,
-  //     &dx);
-  //   }
-
-  //   posx = NMEA_Comma_Pos(p1, 13); //得到经度
-  //   if (posx != 0xFF) {
-  //     CGI_Data_Record_Freme.Long_Data.Degrees = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Long_Data.Minutes = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Long_Data.Seconds = NMEA_Str2num(p1 + posx, &dx);
-  //     CGI_Data_Record_Freme.Long_Data.Hemisphere = NMEA_Str2num(p1 + posx,
-  //     &dx);
-  //   }
 
   posx = NMEA_Comma_Pos(p1, 14); //得到高度
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Altitude_Data = NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    Altitude = temp / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 15); //得到东向速度
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Speed_Data.East_Speed = NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    SpeedValue[0] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 16); //得到北向速度
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Speed_Data.North_Speed = NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    SpeedValue[1] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 17); //得到天向速度
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Speed_Data.Celestial_Speed =
-        NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    SpeedValue[2] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 18); //得到车辆速度
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Speed_Data.Vehicle_Speed =
-        NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    SpeedValue[3] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 19); //得到主天线1的卫星数
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.NSV1_Number = NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    NSV[0] = temp / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 20); //得到副天线2的卫星数
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.NSV2_Number = NMEA_Str2num(p1 + posx, &dx);
+    temp = NMEA_Str2num(p1 + posx, &dx);
+    NSV[1] = temp / NMEA_Pow(10, dx);
   }
 }
 
@@ -257,48 +234,36 @@ void NMEA_GPGGA_Analysis(uint8_t *GPS_Data) {
   uint8_t *p1, dx;
   uint8_t posx;
   uint32_t temp;
-  float rs;
+
   p1 = (uint8_t *)strstr((const char *)GPS_Data, "$GPGGA");
   posx = NMEA_Comma_Pos(p1, 2); //得到纬度
   if (posx != 0xFF) {
     temp = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Lat_Data.Degrees =
-        temp / NMEA_Pow(10, dx + 2); //得到°
-    CGI_Data_Record_Freme.Lat_Data.Minutes =
+    Latitude_Data.Degrees = temp / NMEA_Pow(10, dx + 2); //得到°
+    Latitude_Data.Minutes =
         ((temp % NMEA_Pow(10, dx + 2)) / NMEA_Pow(10, dx)); //得到'
-    CGI_Data_Record_Freme.Lat_Data.Seconds =
+    Latitude_Data.Seconds =
         ((temp % NMEA_Pow(10, dx)) * (1.0) / NMEA_Pow(10, dx)) * 60.0;
-
-    printf("\r\n");
-    printf("CGI_Data_Record_Freme.Lat_Data.Degrees is %d\r\n",
-           CGI_Data_Record_Freme.Lat_Data.Degrees);
-    printf("CGI_Data_Record_Freme.Lat_Data.Minutes is %d\r\n",
-           CGI_Data_Record_Freme.Lat_Data.Minutes);
-    printf("CGI_Data_Record_Freme.Lat_Data.Seconds is %.2f\r\n",
-           CGI_Data_Record_Freme.Lat_Data.Seconds);
   }
 
   posx = NMEA_Comma_Pos(p1, 3); //得到南纬还是北纬
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Lat_Data.Hemisphere = *(p1 + posx);
-    printf("CGI_Data_Record_Freme.Lat_Data.Hemisphere is %c\r\n",
-           CGI_Data_Record_Freme.Lat_Data.Hemisphere);
+    Latitude_Data.Hemisphere = *(p1 + posx);
   }
 
   posx = NMEA_Comma_Pos(p1, 4); //得到经度
   if (posx != 0xFF) {
     temp = NMEA_Str2num(p1 + posx, &dx);
-    CGI_Data_Record_Freme.Long_Data.Degrees =
-        temp / NMEA_Pow(10, dx + 2); //得到°
-    CGI_Data_Record_Freme.Long_Data.Minutes =
+    Longtitude_Data.Degrees = temp / NMEA_Pow(10, dx + 2); //得到°
+    Longtitude_Data.Minutes =
         ((temp % NMEA_Pow(10, dx + 2)) / NMEA_Pow(10, dx)); //得到’
-    CGI_Data_Record_Freme.Long_Data.Seconds =
+    Longtitude_Data.Seconds =
         ((temp % NMEA_Pow(10, dx)) * (1.0) / NMEA_Pow(10, dx)) * 60.0;
   }
 
   posx = NMEA_Comma_Pos(p1, 5); //得到东经还是西经
   if (posx != 0xFF) {
-    CGI_Data_Record_Freme.Long_Data.Hemisphere = *(p1 + posx);
+    Longtitude_Data.Hemisphere = *(p1 + posx);
   }
 }
 
@@ -306,31 +271,28 @@ void NMEA_GPGGA_Analysis(uint8_t *GPS_Data) {
 void Data_Record_Add_New_Frame(void) {
   CGI_Data_Record_Frame_Type Data_Frame;
 
-  Data_Frame.Heading_Angle = CGI_Data_Record_Freme.Heading_Angle;
-  Data_Frame.Pitch_Angle = CGI_Data_Record_Freme.Pitch_Angle;
-  Data_Frame.Roll_Angle = CGI_Data_Record_Freme.Roll_Angle;
+  for (uint8_t i = 0; i < 3; i++) {
+    Data_Frame.Angle_Data[i] = AngleRaw[i];
+    Data_Frame.Gyro_Data[i] = GyoRaw[i];
+    Data_Frame.Acc_Data[i] = AccRaw[i];
+    Data_Frame.Speed_Data[i] = SpeedValue[i];
+  }
+  Data_Frame.Speed_Data[3] = SpeedValue[3];
 
-  Data_Frame.Gyro_Data = CGI_Data_Record_Freme.Gyro_Data;
-  Data_Frame.Acc_Data = CGI_Data_Record_Freme.Acc_Data;
-
-  Data_Frame.Altitude_Data = CGI_Data_Record_Freme.Altitude_Data;
-
-  Data_Frame.Speed_Data = CGI_Data_Record_Freme.Speed_Data;
-
-  Data_Frame.NSV1_Number = CGI_Data_Record_Freme.NSV1_Number;
-  Data_Frame.NSV2_Number = CGI_Data_Record_Freme.NSV2_Number;
+  Data_Frame.NSV_Number[0] = NSV[0];
+  Data_Frame.NSV_Number[1] = NSV[1];
 
   Data_Frame.Lat_Data = Latitude_Data;
   Data_Frame.Long_Data = Longtitude_Data;
 
   /* A simple FIFO algorithm */
-  // if (Data_Record_Frame_CNT <= 9) {
-  //   CGI_Data_Record_Freme[Data_Record_Frame_CNT] = Data_Frame;
-  //   Data_Record_Frame_CNT++;
-  // } else {
-  //   for (uint8_t i = 0; i < 9; i++) {
-  //     CGI_Data_Record_Freme[i] = CGI_Data_Record_Freme[i + 1];
-  //   }
-  //   CGI_Data_Record_Freme[9] = Data_Frame;
-  // }
+  if (Data_Record_Frame_CNT <= 9) {
+    CGI_Data_Record_Freme[Data_Record_Frame_CNT] = Data_Frame;
+    Data_Record_Frame_CNT++;
+  } else {
+    for (uint8_t i = 0; i < 9; i++) {
+      CGI_Data_Record_Freme[i] = CGI_Data_Record_Freme[i + 1];
+    }
+    CGI_Data_Record_Freme[9] = Data_Frame;
+  }
 }

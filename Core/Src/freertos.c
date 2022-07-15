@@ -19,13 +19,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "FreeRTOS.h"
-#include "task.h"
-#include "main.h"
 #include "cmsis_os.h"
+#include "main.h"
+#include "task.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "app_touchgfx.h"
+#include "cgi210.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,13 +56,15 @@ osThreadId Task02Handle;
 
 /* USER CODE END FunctionPrototypes */
 
-void StartTouchGFXask(void const * argument);
-void StartTask02(void const * argument);
+void StartTouchGFXask(void const *argument);
+void StartTask02(void const *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer,
+                                   StackType_t **ppxIdleTaskStackBuffer,
+                                   uint32_t *pulIdleTaskStackSize);
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -78,10 +81,10 @@ void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer,
 /* USER CODE END GET_IDLE_TASK_MEMORY */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
@@ -115,7 +118,6 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
-
 }
 
 /* USER CODE BEGIN Header_StartTouchGFXask */
@@ -125,8 +127,7 @@ void MX_FREERTOS_Init(void) {
  * @retval None
  */
 /* USER CODE END Header_StartTouchGFXask */
-void StartTouchGFXask(void const * argument)
-{
+void StartTouchGFXask(void const *argument) {
   /* USER CODE BEGIN StartTouchGFXask */
   MX_TouchGFX_Process();
   /* Infinite loop */
@@ -143,12 +144,12 @@ void StartTouchGFXask(void const * argument)
  * @retval None
  */
 /* USER CODE END Header_StartTask02 */
-void StartTask02(void const * argument)
-{
+void StartTask02(void const *argument) {
   /* USER CODE BEGIN StartTask02 */
   /* Infinite loop */
   for (;;) {
-    osDelay(1);
+    Data_Record_Add_New_Frame();
+    osDelay(10);
   }
   /* USER CODE END StartTask02 */
 }
@@ -157,4 +158,3 @@ void StartTask02(void const * argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
-
