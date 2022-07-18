@@ -21,7 +21,7 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     DataRecord_Order.resizeToCurrentText();
     DataRecord_Order.setTypedText(touchgfx::TypedText(T___SINGLEUSE_P7JZ));
 
-    Longtitude_Seconds.setXY(855, 13);
+    Longtitude_Seconds.setXY(865, 13);
     Longtitude_Seconds.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Longtitude_Seconds.setLinespacing(0);
     touchgfx::Unicode::snprintf(Longtitude_SecondsBuffer1, LONGTITUDE_SECONDSBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_AYB3).getText());
@@ -31,7 +31,7 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     Longtitude_Seconds.resizeToCurrentText();
     Longtitude_Seconds.setTypedText(touchgfx::TypedText(T___SINGLEUSE_47P3));
 
-    Longtitude_Minutes.setXY(818, 13);
+    Longtitude_Minutes.setXY(820, 13);
     Longtitude_Minutes.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Longtitude_Minutes.setLinespacing(0);
     touchgfx::Unicode::snprintf(Longtitude_MinutesBuffer1, LONGTITUDE_MINUTESBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_DWQK).getText());
@@ -41,7 +41,7 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     Longtitude_Minutes.resizeToCurrentText();
     Longtitude_Minutes.setTypedText(touchgfx::TypedText(T___SINGLEUSE_AHJM));
 
-    Lattitude_Seconds.setXY(725, 13);
+    Lattitude_Seconds.setXY(741, 13);
     Lattitude_Seconds.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Lattitude_Seconds.setLinespacing(0);
     touchgfx::Unicode::snprintf(Lattitude_SecondsBuffer1, LATTITUDE_SECONDSBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_BDMD).getText());
@@ -51,7 +51,7 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     Lattitude_Seconds.resizeToCurrentText();
     Lattitude_Seconds.setTypedText(touchgfx::TypedText(T___SINGLEUSE_OHHY));
 
-    Lattitude_Minutes.setXY(690, 13);
+    Lattitude_Minutes.setXY(698, 13);
     Lattitude_Minutes.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Lattitude_Minutes.setLinespacing(0);
     touchgfx::Unicode::snprintf(Lattitude_MinutesBuffer1, LATTITUDE_MINUTESBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_499X).getText());
@@ -61,13 +61,13 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     Lattitude_Minutes.resizeToCurrentText();
     Lattitude_Minutes.setTypedText(touchgfx::TypedText(T___SINGLEUSE_3XF0));
 
-    Heading_Angle.setXY(642, 13);
-    Heading_Angle.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Heading_Angle.setLinespacing(0);
-    Unicode::snprintf(Heading_AngleBuffer, HEADING_ANGLE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2IS8).getText());
-    Heading_Angle.setWildcard(Heading_AngleBuffer);
-    Heading_Angle.resizeToCurrentText();
-    Heading_Angle.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X6VF));
+    Roll_Angle.setXY(638, 13);
+    Roll_Angle.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Roll_Angle.setLinespacing(0);
+    Unicode::snprintf(Roll_AngleBuffer, ROLL_ANGLE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2IS8).getText());
+    Roll_Angle.setWildcard(Roll_AngleBuffer);
+    Roll_Angle.resizeToCurrentText();
+    Roll_Angle.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X6VF));
 
     Pitch_Angle.setXY(588, 13);
     Pitch_Angle.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -77,13 +77,13 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     Pitch_Angle.resizeToCurrentText();
     Pitch_Angle.setTypedText(touchgfx::TypedText(T___SINGLEUSE_67O2));
 
-    Roll_Angle.setXY(538, 13);
-    Roll_Angle.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    Roll_Angle.setLinespacing(0);
-    Unicode::snprintf(Roll_AngleBuffer, ROLL_ANGLE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_O8TQ).getText());
-    Roll_Angle.setWildcard(Roll_AngleBuffer);
-    Roll_Angle.resizeToCurrentText();
-    Roll_Angle.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FMJA));
+    Heading_Angle.setXY(538, 13);
+    Heading_Angle.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Heading_Angle.setLinespacing(0);
+    Unicode::snprintf(Heading_AngleBuffer, HEADING_ANGLE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_O8TQ).getText());
+    Heading_Angle.setWildcard(Heading_AngleBuffer);
+    Heading_Angle.resizeToCurrentText();
+    Heading_Angle.setTypedText(touchgfx::TypedText(T___SINGLEUSE_FMJA));
 
     Magnetic_Z.setXY(490, 13);
     Magnetic_Z.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -171,9 +171,9 @@ DataCollect_ElementBase::DataCollect_ElementBase()
     add(Longtitude_Minutes);
     add(Lattitude_Seconds);
     add(Lattitude_Minutes);
-    add(Heading_Angle);
-    add(Pitch_Angle);
     add(Roll_Angle);
+    add(Pitch_Angle);
+    add(Heading_Angle);
     add(Magnetic_Z);
     add(Magnetic_Y);
     add(Magnetic_X);

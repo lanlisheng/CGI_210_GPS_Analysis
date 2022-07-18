@@ -23,7 +23,7 @@ Data_CollectorViewBase::Data_CollectorViewBase()
 
     leftBar1.setXY(0, 67);
 
-    DataList.setDirection(touchgfx::EAST);
+    DataList.setDirection(touchgfx::SOUTH);
     DataList.setPosition(100, 116, 250, 250);
 
     tableHead1.setXY(100, 67);

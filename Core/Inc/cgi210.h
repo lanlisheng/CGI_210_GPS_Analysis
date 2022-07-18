@@ -19,11 +19,23 @@ typedef struct {
   float Angle_Data[3];
   float Gyro_Data[3];
   float Acc_Data[3];
+  float Speed_Data[4];
   Longtitude_And_Latitude_Data_Type Lat_Data;
   Longtitude_And_Latitude_Data_Type Long_Data;
-  float Speed_Data[4];
-  uint8_t NSV_Number[2];
 } CGI_Data_Record_Frame_Type;
+
+/* GPS Datas */
+extern float AccRaw[3];
+extern float GyoRaw[3];
+extern float AngleRaw[3];
+extern Longtitude_And_Latitude_Data_Type Longtitude_Data;
+extern Longtitude_And_Latitude_Data_Type Latitude_Data;
+extern double Altitude;
+extern float SpeedValue[4];
+extern uint8_t NSV[2];
+
+extern uint8_t Data_Record_Frame_CNT;
+extern CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10];
 
 void NMEA_GPCHC_Analysis(uint8_t *GPS_Data);
 void NMEA_GPGGA_Analysis(uint8_t *GPS_Data);
@@ -32,6 +44,7 @@ uint32_t NMEA_Pow(uint8_t m, uint8_t n);
 uint8_t NMEA_Comma_Pos(uint8_t *buf, uint8_t cx);
 
 void Data_Record_Add_New_Frame(void);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

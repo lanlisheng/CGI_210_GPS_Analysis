@@ -47,45 +47,8 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp \
  ../TouchGFX/gui/include/gui/model/Model.hpp \
  ../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorView.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/data_collector_screen/Data_CollectorViewBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
- ../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorPresenter.hpp \
- ../TouchGFX/gui/include/gui/model/ModelListener.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- ../TouchGFX/gui/include/gui/containers/CompanyInfo.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CompanyInfoBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
- ../TouchGFX/gui/include/gui/containers/LeftBar.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/containers/LeftBarBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
- ../TouchGFX/gui/include/gui/containers/TableHead.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/containers/TableHeadBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
- ../TouchGFX/generated/images/include/BitmapDatabase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
- ../TouchGFX/target/generated/STM32DMA.hpp \
- ../TouchGFX/target/TouchGFXHAL.hpp \
- ../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
- ../TouchGFX/target/STM32TouchController.hpp \
+ ../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp \
+ ../Core/Inc/cgi210.h ../Core/Inc/main.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  ../Core/Inc/stm32f7xx_hal_conf.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -123,7 +86,48 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h \
  ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h \
- ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+ ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/containers/DataCollect_ElementBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
+ ../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorPresenter.hpp \
+ ../TouchGFX/gui/include/gui/model/ModelListener.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/data_collector_screen/Data_CollectorViewBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp \
+ ../TouchGFX/gui/include/gui/containers/CompanyInfo.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/containers/CompanyInfoBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
+ ../TouchGFX/gui/include/gui/containers/LeftBar.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/containers/LeftBarBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp \
+ ../TouchGFX/gui/include/gui/containers/TableHead.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/containers/TableHeadBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
+ ../TouchGFX/generated/images/include/BitmapDatabase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp \
+ ../TouchGFX/target/generated/STM32DMA.hpp \
+ ../TouchGFX/target/TouchGFXHAL.hpp \
+ ../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
+ ../TouchGFX/target/STM32TouchController.hpp
 ../TouchGFX/generated/texts/include/texts/TypedTextDatabase.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp:
@@ -171,45 +175,9 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:
 ../TouchGFX/gui/include/gui/model/Model.hpp:
 ../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorView.hpp:
-../TouchGFX/generated/gui_generated/include/gui_generated/data_collector_screen/Data_CollectorViewBase.hpp:
-../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
-../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorPresenter.hpp:
-../TouchGFX/gui/include/gui/model/ModelListener.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
-../TouchGFX/gui/include/gui/containers/CompanyInfo.hpp:
-../TouchGFX/generated/gui_generated/include/gui_generated/containers/CompanyInfoBase.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
-../TouchGFX/gui/include/gui/containers/LeftBar.hpp:
-../TouchGFX/generated/gui_generated/include/gui_generated/containers/LeftBarBase.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
-../TouchGFX/gui/include/gui/containers/TableHead.hpp:
-../TouchGFX/generated/gui_generated/include/gui_generated/containers/TableHeadBase.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
-../TouchGFX/generated/images/include/BitmapDatabase.hpp:
-../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
-../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:
-../TouchGFX/target/generated/STM32DMA.hpp:
-../TouchGFX/target/TouchGFXHAL.hpp:
-../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:
-../TouchGFX/target/STM32TouchController.hpp:
+../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp:
+../Core/Inc/cgi210.h:
+../Core/Inc/main.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:
 ../Core/Inc/stm32f7xx_hal_conf.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h:
@@ -248,3 +216,44 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h:
 ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h:
+../TouchGFX/generated/gui_generated/include/gui_generated/containers/DataCollect_ElementBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+../TouchGFX/gui/include/gui/data_collector_screen/Data_CollectorPresenter.hpp:
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/data_collector_screen/Data_CollectorViewBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TiledImage.hpp:
+../TouchGFX/gui/include/gui/containers/CompanyInfo.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/containers/CompanyInfoBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
+../TouchGFX/gui/include/gui/containers/LeftBar.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/containers/LeftBarBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/ListLayout.hpp:
+../TouchGFX/gui/include/gui/containers/TableHead.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/containers/TableHeadBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Rasterizer.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Outline.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Cell.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Renderer.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/RenderingBuffer.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/Scanline.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/canvas_widget_renderer/CanvasWidgetRenderer.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainter.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
+../TouchGFX/generated/images/include/BitmapDatabase.hpp:
+../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp:
+../TouchGFX/target/generated/STM32DMA.hpp:
+../TouchGFX/target/TouchGFXHAL.hpp:
+../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp:
+../TouchGFX/target/STM32TouchController.hpp:

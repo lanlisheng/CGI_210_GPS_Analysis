@@ -1,3 +1,4 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(touchgfx::Unicode::UnicodeChar*, uint16_t, const char*, float)	24	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:62:13:touchgfx::Drawable::~Drawable()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:62:13:virtual touchgfx::Drawable::~Drawable()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:132:23:virtual touchgfx::Drawable* touchgfx::Drawable::getFirstChild()	16	static
@@ -27,10 +28,12 @@
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:40:7:virtual touchgfx::Container::~Container()	16	static
 ../TouchGFX/generated/gui_generated/include/gui_generated/containers/DataCollect_ElementBase.hpp:16:13:DataCollect_ElementBase::~DataCollect_ElementBase()	16	static
 ../TouchGFX/generated/gui_generated/include/gui_generated/containers/DataCollect_ElementBase.hpp:16:13:virtual DataCollect_ElementBase::~DataCollect_ElementBase()	16	static
-../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp:10:13:DataCollect_Element::~DataCollect_Element()	16	static
-../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp:10:13:virtual DataCollect_Element::~DataCollect_Element()	16	static
+../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp:10:11:DataCollect_Element::~DataCollect_Element()	16	static
+../TouchGFX/gui/include/gui/containers/DataCollect_Element.hpp:10:11:virtual DataCollect_Element::~DataCollect_Element()	16	static
 ../TouchGFX/gui/src/containers/DataCollect_Element.cpp:3:1:DataCollect_Element::DataCollect_Element()	16	static
-../TouchGFX/gui/src/containers/DataCollect_Element.cpp:8:6:virtual void DataCollect_Element::initialize()	16	static
+../TouchGFX/gui/src/containers/DataCollect_Element.cpp:5:6:virtual void DataCollect_Element::initialize()	16	static
+../TouchGFX/gui/src/containers/DataCollect_Element.cpp:12:6:void DataCollect_Element::Update_ListElement(int16_t, float*, float*, float*, float*, Longtitude_And_Latitude_Data_Type, Longtitude_And_Latitude_Data_Type)	24	static
+../TouchGFX/gui/src/containers/DataCollect_Element.cpp:100:6:void DataCollect_Element::Init_ListElement(int16_t)	128	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:38:7:touchgfx::Image::~Image()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:38:7:virtual touchgfx::Image::~Image()	16	static
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:34:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	16	static

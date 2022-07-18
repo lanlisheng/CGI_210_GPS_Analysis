@@ -30,9 +30,9 @@ protected:
     touchgfx::TextAreaWithTwoWildcards Longtitude_Minutes;
     touchgfx::TextAreaWithTwoWildcards Lattitude_Seconds;
     touchgfx::TextAreaWithTwoWildcards Lattitude_Minutes;
-    touchgfx::TextAreaWithOneWildcard Heading_Angle;
-    touchgfx::TextAreaWithOneWildcard Pitch_Angle;
     touchgfx::TextAreaWithOneWildcard Roll_Angle;
+    touchgfx::TextAreaWithOneWildcard Pitch_Angle;
+    touchgfx::TextAreaWithOneWildcard Heading_Angle;
     touchgfx::TextAreaWithOneWildcard Magnetic_Z;
     touchgfx::TextAreaWithOneWildcard Magnetic_Y;
     touchgfx::TextAreaWithOneWildcard Magnetic_X;
@@ -65,12 +65,12 @@ protected:
     touchgfx::Unicode::UnicodeChar Lattitude_MinutesBuffer1[LATTITUDE_MINUTESBUFFER1_SIZE];
     static const uint16_t LATTITUDE_MINUTESBUFFER2_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Lattitude_MinutesBuffer2[LATTITUDE_MINUTESBUFFER2_SIZE];
-    static const uint16_t HEADING_ANGLE_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Heading_AngleBuffer[HEADING_ANGLE_SIZE];
-    static const uint16_t PITCH_ANGLE_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar Pitch_AngleBuffer[PITCH_ANGLE_SIZE];
     static const uint16_t ROLL_ANGLE_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Roll_AngleBuffer[ROLL_ANGLE_SIZE];
+    static const uint16_t PITCH_ANGLE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Pitch_AngleBuffer[PITCH_ANGLE_SIZE];
+    static const uint16_t HEADING_ANGLE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar Heading_AngleBuffer[HEADING_ANGLE_SIZE];
     static const uint16_t MAGNETIC_Z_SIZE = 10;
     touchgfx::Unicode::UnicodeChar Magnetic_ZBuffer[MAGNETIC_Z_SIZE];
     static const uint16_t MAGNETIC_Y_SIZE = 10;

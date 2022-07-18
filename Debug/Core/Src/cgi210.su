@@ -1,6 +1,6 @@
-../Core/Src/cgi210.c:41:9:NMEA_Comma_Pos	24	static
-../Core/Src/cgi210.c:59:10:NMEA_Pow	24	static
-../Core/Src/cgi210.c:70:5:NMEA_Str2num	40	static
-../Core/Src/cgi210.c:128:6:NMEA_GPCHC_Analysis	48	static
-../Core/Src/cgi210.c:233:6:NMEA_GPGGA_Analysis	48	static
-../Core/Src/cgi210.c:271:6:Data_Record_Add_New_Frame	88	static
+../Core/Src/cgi210.c:40:9:NMEA_Comma_Pos	24	static
+../Core/Src/cgi210.c:58:10:NMEA_Pow	24	static
+../Core/Src/cgi210.c:69:5:NMEA_Str2num	40	static
+../Core/Src/cgi210.c:127:6:NMEA_GPCHC_Analysis	48	static
+../Core/Src/cgi210.c:232:6:NMEA_GPGGA_Analysis	48	static
+../Core/Src/cgi210.c:270:6:Data_Record_Add_New_Frame	80	static

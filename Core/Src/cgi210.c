@@ -17,9 +17,10 @@ uint8_t NSV[2];
 /* Data records */
 uint8_t Data_Record_Frame_CNT = 0;
 CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10] = {{
-    {0},
-    {0},
-    {0},
+    {0.0},
+    {0.0},
+    {0.0},
+    {0.0},
     {
         0,
         0,
@@ -32,8 +33,6 @@ CGI_Data_Record_Frame_Type CGI_Data_Record_Freme[10] = {{
         0.0,
         0x2D,
     },
-    {0},
-    {0},
 }};
 //从buf里面得到第cx个逗号所在的位置
 //返回值:0~0XFE,代表逗号所在位置的偏移.
@@ -183,7 +182,7 @@ void NMEA_GPCHC_Analysis(uint8_t *GPS_Data) {
   posx = NMEA_Comma_Pos(p1, 11); //得到加表Z轴
   if (posx != 0xFF) {
     temp = NMEA_Str2num(p1 + posx, &dx);
-    AccRaw[2] = temp * 1.0 / NMEA_Pow(10, 2);
+    AccRaw[2] = temp * 1.0 / NMEA_Pow(10, dx);
   }
 
   posx = NMEA_Comma_Pos(p1, 14); //得到高度
@@ -278,9 +277,6 @@ void Data_Record_Add_New_Frame(void) {
     Data_Frame.Speed_Data[i] = SpeedValue[i];
   }
   Data_Frame.Speed_Data[3] = SpeedValue[3];
-
-  Data_Frame.NSV_Number[0] = NSV[0];
-  Data_Frame.NSV_Number[1] = NSV[1];
 
   Data_Frame.Lat_Data = Latitude_Data;
   Data_Frame.Long_Data = Longtitude_Data;
